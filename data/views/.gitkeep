@@ -1,0 +1,4 @@
+# Директория для views данных (Уровень C)
+# Здесь будут сохранены кеши views: timeseries, ml_features, lstm_base, prophet
+
+

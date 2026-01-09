@@ -1,0 +1,399 @@
+/* Shadcn-ui inspired styles for Streamlit */
+
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Root variables - Shadcn-ui color palette */
+:root {
+    --background: 15 23 42; /* slate-900 */
+    --foreground: 241 245 249; /* slate-100 */
+    --card: 30 41 59; /* slate-800 */
+    --card-foreground: 241 245 249;
+    --primary: 14 165 233; /* sky-500 */
+    --primary-foreground: 255 255 255;
+    --secondary: 51 65 85; /* slate-700 */
+    --secondary-foreground: 241 245 249;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184; /* slate-400 */
+    --accent: 51 65 85;
+    --accent-foreground: 241 245 249;
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 14 165 233;
+    --radius: 0.5rem;
+}
+
+/* Global styles */
+* {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Main container */
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1200px;
+}
+
+/* Headers with shadcn-ui style */
+h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    background: linear-gradient(135deg, #0EA5E9 0%, #3B82F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    color: rgb(var(--foreground));
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: rgb(var(--foreground));
+}
+
+/* Cards - shadcn-ui card style */
+div[data-testid="stVerticalBlock"] > div[style*="flex-direction: column"] {
+    background: rgb(var(--card));
+    border: 1px solid rgb(var(--border));
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease-in-out;
+}
+
+div[data-testid="stVerticalBlock"] > div[style*="flex-direction: column"]:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Buttons - shadcn-ui button style */
+.stButton > button {
+    background: rgb(var(--primary));
+    color: rgb(var(--primary-foreground));
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.stButton > button:hover {
+    background: rgb(56, 189, 248); /* sky-400 */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* Secondary button */
+.stButton > button[kind="secondary"] {
+    background: rgb(var(--secondary));
+    color: rgb(var(--secondary-foreground));
+}
+
+.stButton > button[kind="secondary"]:hover {
+    background: rgb(71, 85, 105); /* slate-600 */
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background: rgb(var(--card));
+    border-right: 1px solid rgb(var(--border));
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    padding-top: 2rem;
+}
+
+/* Input fields - shadcn-ui input style */
+.stTextInput > div > div > input,
+.stSelectbox > div > div > select,
+.stNumberInput > div > div > input {
+    background: rgb(var(--input));
+    border: 1px solid rgb(var(--border));
+    border-radius: var(--radius);
+    color: rgb(var(--foreground));
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.stTextInput > div > div > input:focus,
+.stSelectbox > div > div > select:focus,
+.stNumberInput > div > div > input:focus {
+    outline: none;
+    border-color: rgb(var(--ring));
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+/* File uploader */
+.stFileUploader {
+    border: 2px dashed rgb(var(--border));
+    border-radius: var(--radius);
+    padding: 2rem;
+    background: rgb(var(--card));
+    transition: all 0.2s ease-in-out;
+}
+
+.stFileUploader:hover {
+    border-color: rgb(var(--primary));
+    background: rgb(30, 41, 59, 0.5);
+}
+
+/* Tabs - shadcn-ui tabs style */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.5rem;
+    background: transparent;
+    border-bottom: 1px solid rgb(var(--border));
+}
+
+.stTabs [data-baseweb="tab"] {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+    color: rgb(var(--muted-foreground));
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    background: transparent;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    color: rgb(var(--foreground));
+    background: rgb(var(--accent));
+}
+
+.stTabs [aria-selected="true"] {
+    color: rgb(var(--primary));
+    background: transparent;
+    border-bottom: 2px solid rgb(var(--primary));
+}
+
+/* Radio buttons */
+.stRadio > label {
+    color: rgb(var(--foreground));
+    font-weight: 500;
+}
+
+/* Expander */
+.stExpander {
+    background: rgb(var(--card));
+    border: 1px solid rgb(var(--border));
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+}
+
+.stExpander > summary {
+    color: rgb(var(--foreground));
+    font-weight: 500;
+    padding: 1rem;
+}
+
+/* Metrics */
+[data-testid="stMetricValue"] {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(var(--primary));
+}
+
+[data-testid="stMetricLabel"] {
+    color: rgb(var(--muted-foreground));
+    font-size: 0.875rem;
+}
+
+/* Success/Error/Warning messages */
+.stSuccess {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: var(--radius);
+    color: rgb(74, 222, 128);
+    padding: 1rem;
+}
+
+.stError {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius);
+    color: rgb(248, 113, 113);
+    padding: 1rem;
+}
+
+.stWarning {
+    background: rgba(234, 179, 8, 0.1);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    border-radius: var(--radius);
+    color: rgb(253, 224, 71);
+    padding: 1rem;
+}
+
+.stInfo {
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    border-radius: var(--radius);
+    color: rgb(125, 211, 252);
+    padding: 1rem;
+}
+
+/* Dataframe tables */
+.dataframe {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgb(var(--border));
+}
+
+.dataframe thead {
+    background: rgb(var(--secondary));
+}
+
+.dataframe th {
+    color: rgb(var(--foreground));
+    font-weight: 600;
+    padding: 0.75rem;
+}
+
+.dataframe td {
+    color: rgb(var(--foreground));
+    padding: 0.75rem;
+    border-top: 1px solid rgb(var(--border));
+}
+
+.dataframe tbody tr:hover {
+    background: rgb(var(--accent));
+}
+
+/* Plotly charts container */
+.plotly {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgb(var(--border));
+    background: rgb(var(--card));
+    padding: 1rem;
+}
+
+/* Markdown styling */
+.stMarkdown {
+    color: rgb(var(--foreground));
+    line-height: 1.75;
+}
+
+.stMarkdown code {
+    background: rgb(var(--muted));
+    color: rgb(var(--primary));
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-family: 'Fira Code', monospace;
+}
+
+.stMarkdown pre {
+    background: rgb(var(--muted));
+    border: 1px solid rgb(var(--border));
+    border-radius: var(--radius);
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.stMarkdown pre code {
+    background: transparent;
+    padding: 0;
+}
+
+/* JSON viewer */
+.json-viewer {
+    background: rgb(var(--card));
+    border: 1px solid rgb(var(--border));
+    border-radius: var(--radius);
+    padding: 1rem;
+}
+
+/* Divider */
+hr {
+    border: none;
+    border-top: 1px solid rgb(var(--border));
+    margin: 2rem 0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(var(--muted));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--border));
+}
+
+/* Loading spinner */
+.stSpinner > div {
+    border-color: rgb(var(--primary)) transparent transparent transparent;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: rgb(var(--muted-foreground));
+}
+
+.empty-state svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main .block-container > div {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main .block-container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.875rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+

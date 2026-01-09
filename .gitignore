@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs/editors
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local tooling/temp
+.virtual_documents/
+.tmp/
+anaconda_projects/
+*.tmp
+*.log
+*.db
+
+# Env/secrets
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Local data dumps (not required for app runtime)
+energy_data_2_2000.csv
+Kharovsklesprom_data.csv
+
+# Large notebook kept for reference
+ML_analysis.ipynb
